@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr" class="js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aidons Nous Vivant — Association humanitaire au Sénégal</title>
+<meta name="description" content="Aidons Nous Vivant (ANV) est une association humanitaire sénégalaise à but non lucratif. Santé, éducation et environnement au Sénégal et dans la diaspora. Donnez, devenez bénévole ou partenaire.">
+<meta property="og:title" content="Aidons Nous Vivant — Donne ton cœur pour servir">
+<meta property="og:description" content="Association humanitaire sénégalaise à but non lucratif. Agissez à nos côtés : don, bénévolat, partenariat.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1b8299">
+<link rel="icon" href="images/logo.svg">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#35B0CE; --teal-d:#2A93AC; --teal-dk:#124e5e; --teal-deep:#1b8299;
+  --red:#B7131B; --red-d:#8f0e15;
+  --ink:#122b33; --muted:#53646b;
+  --cream:#F8F6F1; --sand:#f1ede3; --line:#e7e2d7;
+  --shadow:0 22px 48px -22px rgba(18,43,51,.32);
+  --shadow-sm:0 10px 26px -14px rgba(18,43,51,.28);
+  --r:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.68;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.fh{font-family:'Poppins',sans-serif;line-height:1.12;margin:0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Poppins';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--red)}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--red);color:#fff;padding:.7rem 1.2rem;border-radius:8px;font-family:'Poppins';font-weight:600}
+.skip:focus{left:8px}
+a:focus-visible,button:focus-visible,.btn:focus-visible,input:focus-visible{outline:3px solid var(--teal-deep);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Poppins';font-weight:600;font-size:.96rem;padding:.85rem 1.6rem;border-radius:50px;border:2px solid transparent;cursor:pointer;transition:.25s;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 26px -12px rgba(183,19,27,.6)}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border-color:var(--teal-deep);color:var(--teal-deep)}
+.btn-ghost:hover{background:var(--teal-deep);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--teal-dk)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn-lg{font-size:1.05rem;padding:1rem 2rem}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(248,246,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:.3s}
+header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 6px 24px -16px rgba(18,43,51,.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.4rem;height:72px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:'Poppins';font-weight:800;color:var(--teal-dk);font-size:1.02rem;white-space:nowrap;flex:0 0 auto}
+.brand img{width:46px;height:46px}
+.nav-links{display:flex;align-items:center;gap:1.6rem;margin-left:auto}
+.nav-links a{font-family:'Poppins';font-weight:500;font-size:.93rem;color:var(--ink);position:relative;padding:.2rem 0;white-space:nowrap}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--red);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:26px;height:3px;background:var(--teal-dk);border-radius:3px;transition:.3s}
+.mobile-menu{display:none;position:fixed;inset:72px 0 auto 0;background:#fff;flex-direction:column;padding:1rem 1.4rem 1.6rem;gap:.2rem;box-shadow:var(--shadow);z-index:99;border-bottom:1px solid var(--line)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Poppins';font-weight:500;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:.9rem;justify-content:center}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:clamp(2.4rem,5vw,4.2rem) 0 clamp(3rem,6vw,5rem)}
+.hero::before{content:"";position:absolute;top:-200px;right:-180px;width:560px;height:560px;background:radial-gradient(circle,rgba(53,176,206,.2),transparent 70%);z-index:0}
+.hero::after{content:"";position:absolute;bottom:-160px;left:-160px;width:420px;height:420px;background:radial-gradient(circle,rgba(183,19,27,.09),transparent 70%);z-index:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.6rem);align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.2rem);font-weight:800;color:var(--teal-dk);margin:.7rem 0 .5rem;letter-spacing:-.5px}
+.hero h1 span{color:var(--red)}
+.hero .lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted);font-weight:500;max-width:40ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.9rem}
+.trust{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.trust div{font-family:'Poppins'}
+.trust b{display:block;font-size:1.5rem;color:var(--teal-deep);font-weight:800;line-height:1}
+.trust small{color:var(--muted);font-size:.84rem}
+.hero-media{position:relative}
+.hero-media>img{width:100%;border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/4.4;object-fit:cover;object-position:center 30%}
+.float-card{position:absolute;bottom:-22px;left:-22px;background:#fff;border-radius:16px;padding:.85rem 1.15rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.7rem;max-width:72%}
+.float-card .dot{width:46px;height:46px;border-radius:13px;background:var(--red);color:#fff;display:grid;place-items:center;font-family:'Poppins';font-weight:800;flex:0 0 auto}
+.float-card small{color:var(--muted);font-size:.72rem;display:block;font-family:'Poppins';text-transform:uppercase;letter-spacing:.07em}
+.float-card b{font-family:'Poppins';font-size:.98rem;color:var(--ink)}
+
+section{padding:clamp(3.2rem,7vw,5.6rem) 0}
+.sec-head{max-width:760px;margin-bottom:2.8rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);font-weight:700;color:var(--red);margin:.5rem 0 .7rem}
+.sec-head p{color:var(--muted);font-size:1.08rem;margin:0}
+
+/* Intro / qui sommes-nous */
+.intro{background:var(--teal-deep);color:#fff}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
+.intro .eyebrow{color:#fff;opacity:.8}
+.intro h2{font-family:'Poppins';font-weight:700;font-size:clamp(1.8rem,3.4vw,2.5rem);margin:.6rem 0 1rem}
+.intro p{color:rgba(255,255,255,.92);font-size:1.08rem;margin:0 0 1rem}
+.pill-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:.5rem 1.1rem;font-family:'Poppins';font-weight:600;font-size:.9rem}
+.vmcards{display:grid;gap:1.1rem}
+.vm{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:1.5rem 1.6rem}
+.vm h3{font-size:1.2rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.6rem}
+.vm p{margin:0;color:rgba(255,255,255,.9);font-size:.98rem}
+.vm .ic{width:34px;height:34px;border-radius:9px;background:#fff;color:var(--red);display:grid;place-items:center;flex:0 0 auto}
+
+/* Domaines (programmes) */
+.prog{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s;border:1px solid var(--line)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card-img{aspect-ratio:16/11;overflow:hidden;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-tag{position:absolute;top:14px;left:14px;background:#fff;color:var(--teal-deep);font-family:'Poppins';font-weight:700;font-size:.76rem;padding:.35rem .8rem;border-radius:50px;display:flex;align-items:center;gap:.4rem}
+.card-b{padding:1.4rem 1.5rem 1.6rem}
+.card-b h3{font-family:'Poppins';font-size:1.25rem;color:var(--teal-dk);margin-bottom:.5rem}
+.card-b p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* Impact band */
+.impact{position:relative;color:#fff;text-align:center;background:var(--teal-dk)}
+.impact .bg{position:absolute;inset:0;background:url('images/rz_ramadan2024.jpg') center/cover;opacity:.22}
+.impact .wrap{position:relative;z-index:1}
+.impact .sec-head h2{color:#fff}
+.impact .sec-head p{color:rgba(255,255,255,.88)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:.6rem}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:2.2rem 1rem;backdrop-filter:blur(3px)}
+.stat .num{font-family:'Poppins';font-weight:800;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1}
+.stat .lbl{font-family:'Poppins';font-weight:600;margin-top:.5rem;font-size:1.05rem}
+.stat .sub{font-size:.85rem;opacity:.85;margin-top:.3rem}
+
+/* Engagements */
+.engage{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.2rem);align-items:center}
+.engage-media img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.engage h2{color:var(--red);font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:1.3rem}
+.engage ul{list-style:none;padding:0;margin:0;display:grid;gap:1.1rem}
+.engage li{display:flex;gap:.9rem;align-items:flex-start}
+.engage li .ic{flex:0 0 40px;height:40px;border-radius:11px;background:var(--teal-deep);color:#fff;display:grid;place-items:center}
+.engage li b{font-family:'Poppins';display:block;color:var(--ink);margin-bottom:.1rem}
+.engage li p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* Réalisations */
+.rz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.rz-year{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-family:'Poppins';font-weight:700;font-size:.76rem;padding:.3rem .75rem;border-radius:50px}
+
+/* Quote band */
+.quote-band{background:var(--teal-deep);color:#fff;text-align:center}
+.quote-band .wrap{max-width:900px}
+.quote-band .mark{font-family:'Poppins';font-weight:800;font-size:3.4rem;line-height:0;color:rgba(255,255,255,.4)}
+.quote-band blockquote{font-family:'Poppins';font-weight:600;font-size:clamp(1.3rem,2.8vw,1.9rem);line-height:1.4;margin:1rem 0 1.4rem}
+.quote-band cite{font-style:normal;font-family:'Poppins';opacity:.85}
+.quote-band cite b{display:block;font-size:1.05rem}
+
+/* S'engager */
+.help{background:var(--sand)}
+.help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.help-card{background:#fff;border-radius:var(--r);padding:2.2rem 1.8rem;box-shadow:var(--shadow-sm);text-align:center;border:1px solid var(--line);display:flex;flex-direction:column}
+.help-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);transition:.28s}
+.help-card .ic{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;margin:0 auto 1.1rem;color:#fff}
+.help-card.don .ic{background:var(--red)} .help-card.ben .ic{background:var(--teal-deep)} .help-card.part .ic{background:var(--teal-dk)}
+.help-card h3{font-family:'Poppins';font-size:1.3rem;color:var(--ink);margin-bottom:.6rem}
+.help-card p{color:var(--muted);font-size:.96rem;margin:0 0 1.5rem;flex:1}
+.help-card .btn{align-self:center}
+
+/* CTA don */
+.cta{background:var(--red);color:#fff;text-align:center}
+.cta h2{font-family:'Poppins';font-weight:800;font-size:clamp(2rem,4.5vw,3rem);margin-bottom:.6rem}
+.cta p{max-width:54ch;margin:0 auto 1.9rem;opacity:.96;font-size:1.12rem}
+.pay{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.7rem;font-family:'Poppins';font-size:.9rem}
+.pay span{background:rgba(255,255,255,.16);padding:.5rem 1.1rem;border-radius:50px;border:1px solid rgba(255,255,255,.3)}
+
+/* Newsletter */
+.news{background:var(--cream)}
+.news-box{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(1.8rem,4vw,3rem);box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+.news-box h2{color:var(--teal-dk);font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
+.news-box p{margin:0;color:var(--muted)}
+.news-form{display:flex;gap:.6rem;flex-wrap:wrap}
+.news-form input{flex:1;min-width:200px;padding:.9rem 1.1rem;border:2px solid var(--line);border-radius:50px;font-family:'Inter';font-size:1rem}
+.news-form input:focus{border-color:var(--teal-deep);outline:none}
+
+/* Footer */
+footer{background:var(--ink);color:#c6d5da;padding:3.6rem 0 1.6rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem}
+.foot-brand{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.foot-brand img{width:54px;height:54px;background:#fff;border-radius:50%;padding:3px}
+.foot-brand b{font-family:'Poppins';font-weight:800;color:#fff;font-size:1.12rem}
+footer h5{font-family:'Poppins';color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 1rem}
+footer a:hover{color:var(--teal)}
+.foot-links,.foot-contact{display:grid;gap:.65rem;font-size:.93rem}
+.foot-contact div{display:flex;gap:.6rem;align-items:flex-start}
+.socials{display:flex;gap:.7rem;margin-top:1.1rem}
+.socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:.25s}
+.socials a:hover{background:var(--teal);transform:translateY(-3px)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2.6rem;padding-top:1.3rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.82rem;color:#8ba1a8}
+
+/* Sticky mobile donate */
+.mobile-donate{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -8px 24px -16px rgba(18,43,51,.5)}
+.mobile-donate .btn{width:100%;justify-content:center;font-size:1rem;padding:.9rem}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+@media(max-width:940px){
+  .hero-grid,.intro-grid,.engage,.news-box{grid-template-columns:1fr}
+  .prog,.rz-grid,.help-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .engage-media{order:-1}
+  .hero-media>img{aspect-ratio:16/11}
+}
+@media(max-width:860px){ .nav-links,.nav-cta .btn-ghost{display:none} .burger{display:flex} }
+@media(max-width:620px){
+  .prog,.rz-grid,.help-grid,.stats-grid,.foot-grid{grid-template-columns:1fr}
+  .hero-actions .btn,.cta .btn{width:100%;justify-content:center}
+  .float-card{left:10px;bottom:-16px}
+  body{padding-bottom:74px}
+  .mobile-donate{display:flex}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Aller au contenu</a>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><img src="images/logo.svg" alt="Logo Aidons Nous Vivant"><span>Aidons Nous Vivant</span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#association">L'association</a>
+      <a href="#programmes">Nos actions</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#engager">S'engager</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#engager" class="btn btn-ghost">Devenir bénévole</a>
+      <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red">Faire un don</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#association">L'association</a>
+    <a href="#programmes">Nos actions</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#engager">S'engager</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red">Faire un don</a>
+  </div>
+</header>
+
+<main id="main"><span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Association humanitaire · Sénégal</span>
+      <h1>Donne ton cœur <span>pour servir</span></h1>
+      <p class="lead">Aidons Nous Vivant mobilise des bénévoles au Sénégal et dans la diaspora pour redonner dignité, soins et espoir à ceux que la vie a fragilisés.</p>
+      <div class="hero-actions">
+        <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red btn-lg">❤ Faire un don</a>
+        <a href="#engager" class="btn btn-ghost btn-lg">Rejoindre les bénévoles</a>
+      </div>
+      <div class="trust">
+        <div><b>2021</b><small>Depuis</small></div>
+        <div><b>+100</b><small>Bénévoles</small></div>
+        <div><b>3</b><small>Régions</small></div>
+        <div><b>3</b><small>Domaines d'action</small></div>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <img src="images/hero.jpg" alt="Bénévoles d'Aidons Nous Vivant réunis lors d'une action de terrain">
+      <div class="float-card"><div class="dot">ANV</div><div><small>Non lucratif · apolitique</small><b>Au service des plus nécessiteux</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUI SOMMES-NOUS -->
+<section class="intro" id="association">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <span class="eyebrow">Qui sommes-nous</span>
+      <h2>Rassembler les bonnes volontés, agir avec le cœur</h2>
+      <p>Aidons Nous Vivant est une association à but non lucratif, non confessionnelle, non clanique et apolitique, créée uniquement pour rassembler des bénévoles prêts à servir leur pays et venir en aide aux plus nécessiteux.</p>
+      <div class="pill-row">
+        <span class="pill">Santé</span><span class="pill">Éducation</span><span class="pill">Environnement</span><span class="pill">Solidarité</span>
+      </div>
+    </div>
+    <div class="vmcards reveal">
+      <div class="vm"><h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg></span>Notre vision</h3><p>Développer un monde solidaire où chaque personne, guidée par son cœur, devient une actrice engagée du changement.</p></div>
+      <div class="vm"><h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.6-9.3-9.2C1.2 8.6 3 5 6.5 5 8.6 5 10 6.3 12 8.3 14 6.3 15.4 5 17.5 5 21 5 22.8 8.6 21.3 11.8 19 16.4 12 21 12 21z"/></svg></span>Notre mission</h3><p>Mobiliser et soutenir les enfants et les femmes dans l'affirmation et la défense de leurs droits, ainsi que leur lutte contre la pauvreté.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMES / DOMAINES -->
+<section id="programmes">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Nos actions</span><h2>Trois domaines, un même engagement</h2><p>Sur le terrain, nos bénévoles agissent là où les besoins sont les plus urgents.</p></div>
+    <div class="prog">
+      <div class="card reveal"><div class="card-img"><img src="images/rz_campagne.jpg" alt="Campagne médicale d'Aidons Nous Vivant" loading="lazy" decoding="async"><span class="card-tag">Santé</span></div><div class="card-b"><h3>Santé</h3><p>Campagnes médicales, dépistages (HTA, diabète), soins dentaires, dons de médicaments et accès aux soins pour les communautés isolées.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_collectes.jpg" alt="Soutien aux enfants des daaras" loading="lazy" decoding="async"><span class="card-tag">Éducation</span></div><div class="card-b"><h3>Éducation</h3><p>Soutien aux daaras et aux écoles, collectes de vêtements, formation et développement des compétences des jeunes.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_setsetal.jpg" alt="Action environnementale Set Sétal" loading="lazy" decoding="async"><span class="card-tag">Environnement</span></div><div class="card-b"><h3>Environnement</h3><p>Set Sétal, nettoyages et sensibilisation au respect du cadre de vie pour un avenir plus sain.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow" style="color:#fff">Notre impact</span><h2>Des résultats concrets, région après région</h2></div>
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num">2021</div><div class="lbl">Année de création</div><div class="sub">Pour impacter positivement</div></div>
+      <div class="stat reveal"><div class="num">3</div><div class="lbl">Régions</div><div class="sub">Dakar · Saint-Louis · Kaolack</div></div>
+      <div class="stat reveal"><div class="num">+100</div><div class="lbl">Membres engagés</div><div class="sub">Au Sénégal et dans la diaspora</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section id="engagements">
+  <div class="wrap engage">
+    <div class="reveal">
+      <span class="eyebrow">Notre manière d'agir</span>
+      <h2>Comment nous agissons</h2>
+      <ul>
+        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Soigner</b><p>Sensibiliser, soutenir et faciliter l'accès aux soins sanitaires.</p></div></li>
+        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Éduquer</b><p>Promouvoir le droit à l'éducation, former et développer les compétences.</p></div></li>
+        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg></span><div><b>Sensibiliser</b><p>Informer et agir pour construire un avenir meilleur pour les générations futures.</p></div></li>
+      </ul>
+    </div>
+    <div class="engage-media reveal"><img src="images/engagements.jpg" alt="Bénévole ANV lors d'une distribution" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS -->
+<section id="realisations" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Nos réalisations</span><h2>Chaque année, sur le terrain</h2><p>De 2022 à aujourd'hui, nos bénévoles transforment la solidarité en actions concrètes.</p></div>
+    <div class="rz-grid">
+      <div class="card reveal"><div class="card-img"><img src="images/rz_campagne.jpg" alt="Campagne médicale à Fass Ngom" loading="lazy" decoding="async"><span class="rz-year">Nov. 2025</span></div><div class="card-b"><h3>Campagne médicale — Fass Ngom</h3><p>Consultations gratuites, dépistages, soins dentaires et dons de médicaments pour des centaines de personnes.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_kaolack.jpg" alt="Soutien alimentaire aux daaras de Kaolack" loading="lazy" decoding="async"><span class="rz-year">Juil. 2025</span></div><div class="card-b"><h3>Soutien alimentaire aux daaras</h3><p>Distribution de denrées de première nécessité à deux daaras de la région de Kaolack.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_street.jpg" alt="Street marketing à Saint-Louis" loading="lazy" decoding="async"><span class="rz-year">Avr. 2025</span></div><div class="card-b"><h3>Street marketing — Saint-Louis</h3><p>Vente de bissap et d'eau pour sensibiliser le public et financer les actions à venir.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_ramadan2025.jpg" alt="Ramadan 2025, don de Ndogou" loading="lazy" decoding="async"><span class="rz-year">Mars 2025</span></div><div class="card-b"><h3>Ramadan 2025 — Don de Ndogou</h3><p>Un moment de partage à Saint-Louis réunissant membres, partenaires et bénévoles.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_ramadan2024.jpg" alt="Ramadan 2024" loading="lazy" decoding="async"><span class="rz-year">2024</span></div><div class="card-b"><h3>Ramadan 2024 — Ndogou</h3><p>Distribution de Ndogou dans trois régions : Dakar, Saint-Louis et Kaolack.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_ordonnances.jpg" alt="Dons d'ordonnances" loading="lazy" decoding="async"><span class="rz-year">2024</span></div><div class="card-b"><h3>Dons d'ordonnances</h3><p>Soutien à des enfants atteints de tuberculose et de maladies chroniques : accès vital aux médicaments.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_setsetal.jpg" alt="Set Sétal, nettoyage de plage" loading="lazy" decoding="async"><span class="rz-year">2023</span></div><div class="card-b"><h3>Set Sétal — Plage de Cassation</h3><p>Sensibilisation et nettoyage pour promouvoir le respect de l'environnement.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_ramadan.jpg" alt="Ramadan 2023, distribution de Ndogou" loading="lazy" decoding="async"><span class="rz-year">2023</span></div><div class="card-b"><h3>Ramadan 2023 — Ndogou</h3><p>Distribution aux Castors, Hôpital CTO, Pikine Guinaw Rail, Daara Seriñ Hady Touré et Marché Syndica.</p></div></div>
+      <div class="card reveal"><div class="card-img"><img src="images/rz_collectes.jpg" alt="Collecte de vêtements" loading="lazy" decoding="async"><span class="rz-year">2023</span></div><div class="card-b"><h3>Collectes de vêtements</h3><p>Collecte d'habits en faveur des daaras Seriñ Fallou Sonhibou et de l'église Martyrs de l'Ouganda.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-band">
+  <div class="wrap reveal">
+    <div class="mark" aria-hidden="true">“</div>
+    <blockquote>On ne peut pas tout faire, mais si chacun de nous essaie de faire quelque chose, cela sauvera beaucoup de personnes et changera beaucoup de vies.</blockquote>
+    <cite>Mary Gail<b>Fondatrice d'Aidons Nous Vivant</b></cite>
+  </div>
+</section>
+
+<!-- S'ENGAGER -->
+<section class="help" id="engager">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Agir à nos côtés</span><h2>Trois façons de nous rejoindre</h2><p>Chacun, à son échelle, peut devenir porteur d'espoir et d'humanité.</p></div>
+    <div class="help-grid">
+      <div class="help-card don reveal">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.6-9.3-9.2C1.2 8.6 3 5 6.5 5 8.6 5 10 6.3 12 8.3 14 6.3 15.4 5 17.5 5 21 5 22.8 8.6 21.3 11.8 19 16.4 12 21 12 21z"/></svg></div>
+        <h3>Faire un don</h3>
+        <p>Votre don finance nos campagnes médicales, nos distributions et nos actions d'éducation partout au Sénégal.</p>
+        <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red">Je fais un don</a>
+      </div>
+      <div class="help-card ben reveal">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M16 7.5a3 3 0 010 5M18.5 20c0-2.6-1-4.6-2.5-5.6"/></svg></div>
+        <h3>Devenir bénévole</h3>
+        <p>Rejoignez une équipe de plus de 100 bénévoles à Dakar, Saint-Louis et Kaolack. Donnez de votre temps et de votre énergie.</p>
+        <a href="mailto:contact@anv-asso.org?subject=Je%20souhaite%20devenir%20b%C3%A9n%C3%A9vole%20ANV" class="btn btn-ghost">Je m'engage</a>
+      </div>
+      <div class="help-card part reveal">
+        <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M8 11l-3 3 4 4 3-3M16 13l3-3-4-4-3 3"/><path d="M9.5 12.5l5-5"/></svg></div>
+        <h3>Devenir partenaire</h3>
+        <p>Entreprises et institutions : associez votre image à une cause qui a du sens et soutenez nos programmes.</p>
+        <a href="mailto:contact@anv-asso.org?subject=Proposition%20de%20partenariat%20ANV" class="btn btn-ghost">Nous écrire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DON -->
+<section class="cta" id="don">
+  <div class="wrap reveal">
+    <h2>Chaque cœur compte</h2>
+    <p>Un geste aujourd'hui, c'est un repas distribué, un enfant soigné, une famille soutenue. Rejoignez le mouvement.</p>
+    <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-white btn-lg">❤ Faire un don maintenant</a>
+    <div class="pay"><span>Orange Money</span><span>Wave</span><span>HelloAsso</span><span>+221 77 360 74 70</span></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="wrap">
+    <div class="news-box reveal">
+      <div>
+        <h2>Restez informé de nos actions</h2>
+        <p>Recevez nos actualités, campagnes et appels à la mobilisation.</p>
+      </div>
+      <form class="news-form" id="nl" novalidate>
+        <input type="email" id="nlmail" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" required>
+        <button type="submit" class="btn btn-red">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="images/logo.svg" alt="Logo ANV"><b>Aidons Nous Vivant</b></div>
+        <p style="margin:0 0 .5rem">Association humanitaire sénégalaise à but non lucratif, non confessionnelle, non clanique et apolitique.</p>
+        <p style="margin:0;color:#8ba1a8">« Donne ton cœur pour servir. »</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.5h4V21H3zM9 8.5h3.8v1.7h.1c.5-.9 1.8-1.9 3.6-1.9 3.9 0 4.6 2.5 4.6 5.8V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5H16V4.8c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9V11H7.5v3H10v8z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M16 3c.3 2 1.6 3.6 3.6 3.9V10c-1.4 0-2.7-.4-3.6-1.1v6.3c0 3.1-2.5 5.6-5.6 5.6S4.8 18.3 4.8 15.2 7.3 9.6 10.4 9.6c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2a2.4 2.4 0 102.4 2.4V3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Navigation</h5>
+        <div class="foot-links">
+          <a href="#association">L'association</a>
+          <a href="#programmes">Nos actions</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#engager">S'engager</a>
+          <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener">Faire un don</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <div class="foot-contact">
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:contact@anv-asso.org">contact@anv-asso.org</a></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg><a href="tel:+221773607470">+221 77 360 74 70</a></div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Dakar · Saint-Louis · Kaolack — Sénégal</span></div>
+          <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red" style="margin-top:.4rem;justify-content:center">Faire un don</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Aidons Nous Vivant — Tous droits réservés.</span>
+      <span>Site réalisé par Gaydel Digital</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-donate">
+  <a href="https://www.helloasso.com/associations/aidons-nous-vivant-senegal/formulaires/1" target="_blank" rel="noopener" class="btn btn-red">❤ Faire un don</a>
+</div>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>20),{passive:true});
+const burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{const o=mm.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mm.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
+// newsletter -> mailto
+document.getElementById('nl').addEventListener('submit',e=>{
+  e.preventDefault();
+  const m=document.getElementById('nlmail').value.trim();
+  if(!m) return;
+  location.href='mailto:contact@anv-asso.org?subject=Inscription%20newsletter%20ANV&body='+encodeURIComponent('Bonjour, je souhaite recevoir la newsletter. Mon e-mail : '+m);
+});
+// reveal
+(function(){
+  const items=[...document.querySelectorAll('.reveal')];
+  const show=el=>el.classList.add('in');
+  const inView=el=>{const r=el.getBoundingClientRect();return r.top<innerHeight*0.92&&r.bottom>0;};
+  if(!('IntersectionObserver' in window)){items.forEach(show);return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  items.forEach((el,i)=>{el.style.transitionDelay=(i%3*60)+'ms';inView(el)?show(el):io.observe(el);});
+  addEventListener('load',()=>setTimeout(()=>items.forEach(el=>{if(!el.classList.contains('in'))show(el);}),1400));
+})();
+</script>
+</body>
+</html>
