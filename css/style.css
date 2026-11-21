@@ -263,6 +263,12 @@ footer h5{color:#fff;font-family:'Poppins',sans-serif;font-size:.78rem;letter-sp
   .ig-grid{gap:.6rem}
   .values{grid-template-columns:1fr 1fr}
   .trust{gap:1.3rem}
+  /* le cadre passe sous la photo, propre et pleine largeur */
+  .hero-media{margin-bottom:0}
+  .float-card{position:static;transform:none;left:auto;right:auto;bottom:auto;max-width:none;width:100%;margin-top:.9rem;padding:1rem 1.1rem}
+  .float-card .dot{width:46px;height:46px}
+  .float-card b{font-size:.92rem}
+  .float-card small{font-size:.76rem}
 }
 @media(max-width:520px){
   .prog,.rz-grid,.eng3,.help-grid,.stats-grid,.ig-grid{grid-template-columns:1fr}
@@ -270,6 +276,4 @@ footer h5{color:#fff;font-family:'Poppins',sans-serif;font-size:.78rem;letter-sp
   .values{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column}
-  .float-card{left:50%;transform:translateX(-50%);bottom:-26px}
-  .hero-media{margin-bottom:1.6rem}
 }
